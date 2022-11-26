@@ -1,0 +1,21 @@
+<%= link_to 'New Article', new_article_path %>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Body</th>
+      <th>Comments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <td><%= article.id %></td>
+        <td><%= article.name %></td>
+        <td><%= article.body %></td>
+        <td><%= link_to 'View', article_comments_path(article) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
